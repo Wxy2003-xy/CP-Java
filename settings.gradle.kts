@@ -1,0 +1,2 @@
+rootProject.name = "CP-Java"
+
