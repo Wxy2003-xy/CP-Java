@@ -26,17 +26,20 @@ public class Graph {
 
     // Print adjacency matrix
     public void printGraph() {
+        int cellWidth = 5; // Adjust width as needed based on the largest number or value
+
         for (int i = 0; i < V; i++) {
             for (int j = 0; j < V; j++) {
                 if (adjMat[i][j] == Integer.MIN_VALUE) {
-                    System.out.print('x' + " ");
+                    System.out.printf("%" + cellWidth + "s", "x");
                 } else {
-                    System.out.print(adjMat[i][j] + " ");
+                    System.out.printf("%" + cellWidth + "d", adjMat[i][j]);
                 }
             }
             System.out.println();
         }
     }
+
 
     public int[][] getAdjMatrix() {
         return adjMat; // Return the adjacency matrix

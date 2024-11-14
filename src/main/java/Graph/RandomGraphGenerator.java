@@ -78,13 +78,9 @@ public class RandomGraphGenerator {
 
         return graph;
     }
-
-    /**
-     *      Example Usage:
-     *         public static void main(String[] args) {
-     *             RandomGraphGenerator generator = new RandomGraphGenerator(5, 6, true, true, false, 1);
-     *             Graph randomGraph = generator.generate();
-     *             randomGraph.printGraph();
-     *         }
-     * */
+    public static void main(String[] args) {
+        RandomGraphGenerator generator = new RandomGraphGenerator(5, 6, true, true, false, 1);
+        Graph randomGraph = generator.generate();
+        randomGraph.printGraph();
+    }
 }
