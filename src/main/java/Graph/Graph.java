@@ -24,6 +24,10 @@ public class Graph {
         }
     }
 
+    public int getVertexCount() {
+        return this.V;
+    }
+
     // Print adjacency matrix
     public void printGraph() {
         int cellWidth = 5; // Adjust width as needed based on the largest number or value
