@@ -9,14 +9,27 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class TSP {
-    public int exhaustiveSolve(Graph g) {
+    public int[] exhaustiveSolve(Graph g) {
         int[][] adjMat = g.getAdjMatrix();
         int numOfVertices = g.getVertexCount();
         int currentMin = Integer.MAX_VALUE;
         for (int i = 0; i < numOfVertices - 1; i++) {
-
+            
         }
-        return 0;
+        return ;
+    }
+
+    private boolean ifFeasible(int[] sequence, int[][] adjMat, int limit) {
+        int sum = 0;
+        for (int i = 0; i < sequence.length - 1; i++) {
+            int curr = sequence[i];
+            int nxt = sequence[i + 1];
+            if (adjMat[curr][nxt] < 0) {
+                return false;
+            }
+            sum = sum + adjMat[curr][nxt];
+        }
+        return sum <= limit;
     }
     public int greedySolve(Graph g) {
         int[][] adjMat = g.getAdjMatrix();
