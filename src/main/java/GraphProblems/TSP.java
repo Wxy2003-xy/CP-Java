@@ -4,6 +4,7 @@ import Graph.Graph;
 import Graph.RandomGraphGenerator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -16,7 +17,16 @@ public class TSP {
         for (int i = 0; i < numOfVertices - 1; i++) {
             
         }
-        return ;
+        return null;
+    }
+
+    private int[] subarray(int[] arr, int init, int end) {
+        int len = end - init + 1;
+        int[] res = new int[len];
+        for (int i = init; i <= end; i++) {
+            res[i - init] = arr[i];
+        }
+        return res;
     }
 
     private boolean ifFeasible(int[] sequence, int[][] adjMat, int limit) {
@@ -38,8 +48,8 @@ public class TSP {
         while(!unvisited.isEmpty()) {
             
         }
+        return 0;
     }
-
 
     public static void main(String[] args) {
         RandomGraphGenerator r =
@@ -47,4 +57,5 @@ public class TSP {
         Graph g = r.generate();
         g.printGraph();
     }
+
 }
