@@ -31,14 +31,14 @@ public class TrappedWater {
         return sum;
     }
     public static void main(String[] args) {
-        int[] topo = {0,1,0,2,1,0,1,3,2,1,2,1};
-        //            0,1,2,3,4,5,6,7,8,9,0,1
-        int[] topo2 = {3,0,1,0,1,0,3};
-        int[] topo3 = {0,1,0,4,0,2};
-        int[] topo4 = {4,2,3,1,3,0,1,2};
+        int[] topo = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
+        int[] topo2 = {3, 0, 1, 0, 1, 0, 3};
+        int[] topo3 = {0, 1, 0, 4, 0, 2};
+        int[] topo4 = {4, 2, 3, 1, 3, 0, 1, 2};
 
-        int expected = 6;
-        int expected2 = 3;
-        System.out.println(solution(topo));
+        System.out.println(solution(topo));   // Expected: 6
+        System.out.println(solution(topo2));  // Expected: 9
+        System.out.println(solution(topo3));  // Expected: 6
+        System.out.println(solution(topo4));  // Expected: 7
     }
 }
