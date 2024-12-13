@@ -62,6 +62,7 @@ public class MarkArrayScore {
     }
     public static long findScore(int[] arr) {
         long score = 0;
+        boolean[] marked = new boolean[arr.length];
         PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> {
             if (a[0] != b[0]) {
                 return Integer.compare(a[0], b[0]);
@@ -79,13 +80,17 @@ public class MarkArrayScore {
             int[] minPair = pq.poll();
             int min = minPair[0];
             int minIdx = minPair[1];
+            if (marked[minIdx]) {
+                continue;
+            }
+            score += min;
             int leftIdx = minIdx - 1;
             int rightIdx = minIdx + 1;
             if (leftIdx >= 0) {
-                int left = arr[leftIdx];
+                marked[leftIdx] = true;
             }
             if (rightIdx < arr.length) {
-                int right = arr[rightIdx];
+                marked[rightIdx] = true;
             }
         }
         return score;
